@@ -17,8 +17,6 @@ Active Router replies to ARP requests using the Virtual MAC so traffic destined 
 If Active Route fails, Standby Router takes over as the new Active.  New Router uses GARP to advertise new MAC Address.
 
 If old router comes back online it wont take back its role as Active, will be Standby
-
-test
 ## HSRP
 
 Cisco Proprietary
