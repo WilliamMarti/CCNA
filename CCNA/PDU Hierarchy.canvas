@@ -1,0 +1,11 @@
+{
+	"nodes":[
+		{"id":"9fa4dac027f0f40a","x":80,"y":-200,"width":250,"height":60,"type":"text","text":"Packet (Layer 3)"},
+		{"id":"bcc02c08322fc1e1","x":-420,"y":-200,"width":250,"height":60,"type":"text","text":"Frame (Layer 2)"},
+		{"id":"54b5807a0afdc2ad","x":-170,"y":-380,"width":250,"height":60,"type":"text","text":"Protocol Data Unit"}
+	],
+	"edges":[
+		{"id":"b9fd67b4ae83a3c1","fromNode":"54b5807a0afdc2ad","fromSide":"bottom","toNode":"9fa4dac027f0f40a","toSide":"top"},
+		{"id":"f6f7ab9f62e2e0fd","fromNode":"54b5807a0afdc2ad","fromSide":"bottom","toNode":"bcc02c08322fc1e1","toSide":"top"}
+	]
+}

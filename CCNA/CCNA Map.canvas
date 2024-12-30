@@ -1,0 +1,12 @@
+{
+	"nodes":[
+		{"id":"a61d580c07a732e6","x":-160,"y":-420,"width":250,"height":60,"type":"text","text":"Subnet"},
+		{"id":"89c56df2d9dfb7cd","x":-160,"y":-240,"width":250,"height":60,"type":"text","text":"Vlans"},
+		{"id":"f5263dd19aa37906","x":-160,"y":-60,"width":250,"height":60,"type":"text","text":"STP"},
+		{"id":"8eed531e65ce9c91","x":-160,"y":160,"width":250,"height":60,"type":"text","text":"[[FHRP - First Hop Redundancy Protocol]]"}
+	],
+	"edges":[
+		{"id":"1bfd10e9dd77cde4","fromNode":"a61d580c07a732e6","fromSide":"bottom","toNode":"89c56df2d9dfb7cd","toSide":"top"},
+		{"id":"5936f74cca1b3eae","fromNode":"89c56df2d9dfb7cd","fromSide":"bottom","toNode":"f5263dd19aa37906","toSide":"top"}
+	]
+}

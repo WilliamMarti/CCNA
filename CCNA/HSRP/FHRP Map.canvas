@@ -1,0 +1,13 @@
+{
+	"nodes":[
+		{"id":"ce480b7135379737","type":"text","text":"FHRP - First Hop Redundancy Protocol","x":-200,"y":-500,"width":250,"height":60},
+		{"id":"362c0af069f3ad72","type":"text","text":"HSRP","x":-520,"y":-280,"width":250,"height":60},
+		{"id":"6816a1cd727a5bb6","type":"text","text":"VRRP","x":-200,"y":-280,"width":250,"height":60},
+		{"id":"e54100fc70ebe81d","type":"text","text":"GLBP","x":120,"y":-280,"width":250,"height":60}
+	],
+	"edges":[
+		{"id":"2a65e76d690f41d3","fromNode":"ce480b7135379737","fromSide":"bottom","toNode":"362c0af069f3ad72","toSide":"top"},
+		{"id":"890308345b99123b","fromNode":"ce480b7135379737","fromSide":"bottom","toNode":"6816a1cd727a5bb6","toSide":"top"},
+		{"id":"0f13c6ce67d6661d","fromNode":"ce480b7135379737","fromSide":"bottom","toNode":"e54100fc70ebe81d","toSide":"top"}
+	]
+}
