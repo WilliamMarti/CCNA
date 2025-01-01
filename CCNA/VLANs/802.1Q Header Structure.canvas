@@ -1,0 +1,17 @@
+{
+	"nodes":[
+		{"id":"d66a2aeea421d960","type":"text","text":"**IEEE 802.1Q Header**\n32 bits","x":-190,"y":-420,"width":250,"height":100},
+		{"id":"a46af9f331610420","type":"text","text":"**TPID**\nTag Protocol Identifier\n16 bits","x":-440,"y":-190,"width":250,"height":110},
+		{"id":"42f372fe1ef57367","type":"text","text":"**TCI**\nTag Control Information\n16 Bits","x":60,"y":-190,"width":250,"height":110},
+		{"id":"abe3b2ea9ddddfec","type":"text","text":"**VID**\nVlan Identifier\n12 bits","x":360,"y":50,"width":250,"height":110},
+		{"id":"29e0b496ee283c5c","type":"text","text":"**DEI**\nDrop Eligible Indicator\n1 bit","x":60,"y":50,"width":250,"height":110},
+		{"id":"07fd6c85fedc1bc6","type":"text","text":"**PCP**\nPriority Code Point\n3 bits","x":-260,"y":50,"width":250,"height":110}
+	],
+	"edges":[
+		{"id":"955b859fc7d9e07a","fromNode":"42f372fe1ef57367","fromSide":"bottom","toNode":"07fd6c85fedc1bc6","toSide":"top"},
+		{"id":"5934ea5235960465","fromNode":"42f372fe1ef57367","fromSide":"bottom","toNode":"29e0b496ee283c5c","toSide":"top"},
+		{"id":"ab30a15a4d293b02","fromNode":"42f372fe1ef57367","fromSide":"bottom","toNode":"abe3b2ea9ddddfec","toSide":"top"},
+		{"id":"fb1b6011d3347a69","fromNode":"d66a2aeea421d960","fromSide":"bottom","toNode":"a46af9f331610420","toSide":"top"},
+		{"id":"46236c42fea798e3","fromNode":"d66a2aeea421d960","fromSide":"bottom","toNode":"42f372fe1ef57367","toSide":"top"}
+	]
+}
