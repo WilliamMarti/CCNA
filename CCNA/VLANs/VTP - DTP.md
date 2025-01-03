@@ -11,7 +11,7 @@ DTP - Dynamic Trunking Protocol
 
 Recommended to **disable** DTP
 
-VTP - Vlan Trunk Protocol
+VTP - VLAN Trunk Protocol
 
 Recommended to **not** use VTP
 

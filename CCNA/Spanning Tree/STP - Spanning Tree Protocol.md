@@ -57,7 +57,7 @@ STP Steps
 
 
 
-| Soeed    | STP Cost |
+| Speed    | STP Cost |
 | -------- | -------- |
 | 10 Mbps  | 100      |
 | 100 Mbps | 19       |

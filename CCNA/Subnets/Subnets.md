@@ -1,4 +1,4 @@
-
+Subnet Practice - https://subnetipv4.com/
 ###### Classful Subnets
 
 |     | First Binary | First Oct Range | Prefix Length |
