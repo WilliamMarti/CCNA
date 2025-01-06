@@ -19,7 +19,7 @@ If Active Route fails, Standby Router takes over as the new Active.  New Router 
 If old router comes back online it wont take back its role as Active, will be Standby
 final
 
-## HSRP
+## **HSRP**
 
 Cisco Proprietary
 
@@ -57,5 +57,36 @@ Router(config-if)# standby 1 preempt
 | ------- | ------------------- | ----------------- |
 | v1      | 0000.0c07.acXX      | 224.0.0.2         |
 | v2      | 000.0c9f.fXXX       | 224.0.0.102       |
-|         |                     |                   |
+Active Router:
+1. Highest Priority (default 100)
+2. Highest IP address
+
+## **VRRP**
+
+Virtual Router Redundancy Protocol
+
+Open Standard 
+**Master** and **Backup** routers
+Multicast of 224.0.0.18
+Virtual MAC 0000.5e00.01XX (XX = Group #)
+
+Can configure different Master router per subnet to Load Balance
+
+## **GLBP** 
+
+Gateway Load Balancing Protocol
+
+Cisco Proprietary
+
+Can load balance between multiple routers *within a single subnet*
+
+An AVG (Active Virtual Gateway) is elected
+
+Up to 4x AVFs (Active Virtual Forwarders) are assigned by the AV.  AVG can be an AVF too.
+
+| Virtual MAC Address | Multicast Address |
+| ------------------- | ----------------- |
+| 0000.b400.XXYY      | 224.0.0.102       |
+XX = GLBP group num
+YY = AVF number
 
