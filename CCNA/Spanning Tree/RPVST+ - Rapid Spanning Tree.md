@@ -39,20 +39,20 @@ RPVST+ has the same rules for Root Bridge and Root Ports and Designated Ports.
 
 ###### **STP Port States**
 
-| State      | Send / Receive BPDUs | Frame Forwarding | MAC Learning | Stable/Transitive |
-| ---------- | -------------------- | ---------------- | ------------ | ----------------- |
-| Blocking   | No / Yes             | No               | No           | Stable            |
-| Listening  | Yes / Yes            | No               | No           | Transitive        |
-| Learning   | Yes / Yes            | No               | Yes          | Transitive        |
-| Forwarding | Yes / Yes            | Yes              | Yes          | Stable            |
-| Disabled   | No / No              | No               | No           | Stable            |
+| State          | Send / Receive BPDUs | Frame Forwarding | MAC Learning | Stable/Transitive |
+| -------------- | -------------------- | ---------------- | ------------ | ----------------- |
+| Blocking       | No / Yes             | No               | No           | Stable            |
+| Listening      | Yes / Yes            | No               | No           | Transitive        |
+| **Learning**   | Yes / Yes            | No               | Yes          | Transitive        |
+| **Forwarding** | Yes / Yes            | Yes              | Yes          | Stable            |
+| Disabled       | No / No              | No               | No           | Stable            |
 ###### **RPVST+ Port States**
 
-| State      | Send / Receive BPDUs | Frame Forwarding | MAC Learning | Stable/Transitive |
-| ---------- | -------------------- | ---------------- | ------------ | ----------------- |
-| Discarding | No / Yes             | No               | No           | Stable            |
-| Learning   | Yes / Yes            | No               | Yes          | Transitive        |
-| Forwarding | Yes / Yes            | No               | Yes          | Transitive        |
+| State          | Send / Receive BPDUs | Frame Forwarding | MAC Learning | Stable/Transitive |
+| -------------- | -------------------- | ---------------- | ------------ | ----------------- |
+| Discarding     | No / Yes             | No               | No           | Stable            |
+| **Learning**   | Yes / Yes            | No               | Yes          | Transitive        |
+| **Forwarding** | Yes / Yes            | No               | Yes          | Transitive        |
 Shutdown = Discarding
 Enabled but blocking = Discarding
 
@@ -66,5 +66,59 @@ Enabled but blocking = Discarding
 
 Alternate is a backup to the Root Port
 
-Backbone Fast STP config -> Built into RSTP
+Backbone Fast / Uplink Fast STP config -> Built into RSTP
 
+**Backbone Port Role** - Discarding port that receives a superior BPDU **from another switch on the same interface** 
+	Only happens when 2 switch interfaces are connected to the same collision domain (Hub)
+
+RSTP version number = 2
+STP version number = 0
+
+Classic BPDU  uses 2 bits, 1 and 8th
+RSTP uses all 8 bits
+
+Classic STP, only the Root Bridge originates BPDUs
+RSTP ALL switches originate and send BPDUs from Designated Ports (2 seconds)
+
+Classic lost switch = 10 interfaces @ 2 sec per = 20 seconds
+RSTP lost switch = 3 BPDUs @ 2 sec per = 6 seconds
+	Flush / Delete all interfaces
+
+**Link Types**
+1. Edge = Connected to end host
+2. Point-to-Point = Connected between 2 switches
+3. Shared = Connection to a Hub, half-duplex
+
+
+```
+Switch(config)# spanning-tree mode rapid-pvst
+```
+
+```
+Switch(config)# int g0/0
+Switch(config)# spanning-tree link-type point-to-point
+```
+
+
+802.1w -> RSTP -> Rapid PVST+
+802.1s -> STP
+802.1s -> MSTP (Multiple STP)
+802.1d -> PVST+ (Cisco)
+
+**RSTP Port Roles**
+- Root
+- Designated 
+- Alternate
+- Backup
+
+**Link Types**
+- Edge
+- Point-to-point
+- Shared
+
+**STP**
+* Discarding
+* Listening
+* Learning
+* Forwarding
+* Disabled  

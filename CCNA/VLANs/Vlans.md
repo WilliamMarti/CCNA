@@ -24,6 +24,7 @@ Normal Vlans: 1-1005
 Extended Vlans: 1006-4094
 
 0 - Reserved
+1002-1005 Reserved (Token Ring/FDDI)
 4096 - Reserved
 
 Native Vlan = 1
@@ -54,4 +55,11 @@ Switch(config)# ip routing
 Switch(config)# int g0/0
 Switch(config-if)# no switchport
 ```
+
+Creating SVI will **not** auto create a L2 Vlan
+
+L3 Switch must have at least 1 access port in the vlan  in an up/up state AND/OR one trunk port that allows the vlan that is in an up/up state
+
+SVI must not be shutdown
+
 

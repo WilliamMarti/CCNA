@@ -1,0 +1,15 @@
+{
+	"nodes":[
+		{"id":"ee27bf099f8c6a64","x":-460,"y":-360,"width":250,"height":60,"type":"text","text":"WPA"},
+		{"id":"04372863304c6269","type":"text","text":"WPA2","x":-140,"y":-360,"width":250,"height":60},
+		{"id":"74f39b5f4d95c875","type":"text","text":"WPA2","x":180,"y":-350,"width":250,"height":50},
+		{"id":"7daab65a7228de52","type":"text","text":"TKIP","x":-460,"y":-220,"width":250,"height":60},
+		{"id":"9ef6426c6565fe2c","type":"text","text":"CCMP","x":-140,"y":-220,"width":250,"height":60},
+		{"id":"5c342162f96546fa","type":"text","text":"GCMP","x":180,"y":-220,"width":250,"height":60}
+	],
+	"edges":[
+		{"id":"1798c0a44bc24f5e","fromNode":"ee27bf099f8c6a64","fromSide":"bottom","toNode":"7daab65a7228de52","toSide":"top"},
+		{"id":"53fab15f2c6b0ac9","fromNode":"04372863304c6269","fromSide":"bottom","toNode":"9ef6426c6565fe2c","toSide":"top"},
+		{"id":"5af5355418e80811","fromNode":"74f39b5f4d95c875","fromSide":"bottom","toNode":"5c342162f96546fa","toSide":"top"}
+	]
+}

@@ -1,4 +1,4 @@
-'Classic Spanning Tree Protocol' is IEEE 802.1D
+'Classic Spanning Tree Protocol is IEEE 802.1D
 
 STP prevents L2 loops by placing redundant ports in a blocking state, essential "disabling" the interface (not the interface is still up/up)
 
@@ -52,8 +52,15 @@ Other switches will forward BPDU, but not generate their own
 STP Steps
 
 1. Switch with the lowest Bridge ID is elected as the Root Bridge.  All ports on the Root Bridge are Designated Ports (Forwarding State)
-2. Each remaining switch will selected ONE of its interfaces to be its **root port**.  The interfaces with the lowest root cost will be the root port.  Root Ports are also in a Forwarding State
-3. 
+2. Each remaining switch will selected ONE of its interfaces to be its **root port**.  
+	1. Root Port Selection
+		1. The interfaces with the lowest root cost will be the root port.  Root Ports are also in a Forwarding State
+		2. Lowest Neighbor ID
+		3. Lowest Neighbor Port ID
+3. Need to block some ports now
+	1. Switch with Lowest Root Cost will make its port Designated
+	2. If the Root Cost is the same, the switch with the lowest Bridge ID will make it port Designated
+	3. The other switch will make its port non-designated (blocking)
 
 
 
@@ -64,3 +71,30 @@ STP Steps
 | 1 Gbps   | 4        |
 | 10 Gbps  | 2        |
 
+**Port Roles**
+- Root Port
+- Designated Port
+- Blocked (Non-Designated)
+
+**Loopguard** - Protects the network from loops by disabling a port if it unexpectedly stops receiving BPDUs, ensuing it does not mistakenly enter Forwarding state
+	Issue for unidirection links.  Detet unidirection and puts the port in a Broken state
+
+```
+Switch(config)# int g0/0
+Switch(config-if)# spanning-tree guard loop
+```
+
+```
+Switch(config)# spaning-tree loopguard default
+```
+
+Loopguard vs Rootguard are mutually exclusive.  Each will overwrite the other.    Specific will take effect.  
+
+Root Cost - Total cost of outgoing interfaces to Root Bridge
+
+Every collision domain has a single STP Designated Port
+
+1. Lowest Root Cost makes its port Designated
+2. If cost is the same, lowest Bridge ID
+3. If there is 2 links to the same switch, lowest **neighbor** Port ID (G0/0 > G0/1 of other side)
+4. Other switch will make its port non-designated (Blocked)
