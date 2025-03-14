@@ -39,7 +39,7 @@ Destination Ports : 16 bits
 
 TCP Forward Acknowledgment
 
-
+![[TCP-Forward-ACK.PNG]]
 
 
 TCP Retransmission
@@ -76,11 +76,12 @@ For real-time voice/video, UDP is preferred
 | FTP Data    | 20          | DHCP server  | 67          | DNS             | 53          |
 | FTP Control | 21          | DHCP client  | 68          |                 |             |
 | SSH         | 22          | TFTP         | 69          |                 |             |
-| Telnet      | 21          | SNMP agent   | 161         |                 |             |
+| Telnet      | 23          | SNMP agent   | 161         |                 |             |
 | SMTP        | 25          | SNMP manager | 162         |                 |             |
 | HTTP        | 80          | Syslog       | 514         |                 |             |
 | POP3        | 110         |              |             |                 |             |
 | HTTPS       | 443         |              |             |                 |             |
+|             |             |              |             |                 |             |
 
 
 
