@@ -93,4 +93,108 @@ Remaining 64 bits can be used for hosts
 
 0000:0000:0000:0001 64-bit "interface ID" the host portion of the address
 
+##### Configuring IPV6
+
+```
+R1(config)# ipv6 unicast-routing
+R1(config)# int g0/0
+R1(config-if)# ipv6 address 2001:db8:0:0::1/64
+R1(config-if)# no shut
+```
+
+```
+R1# show ipv6 brief
+```
+
+Interface will automatically have "link-local" address
+
+##### EUI-64
+
+Extended Unique Indentifier
+
+(Modified) EUI-64 is a method of converting a MAC Address (48 bits) into a 64-bit interface ID
+
+This interface ID can then become the "host portion" of a /64 IPv6 address
+
+Convert MAC --
+1. Divide MAC Addresss in half
+	1. 12:34:56:78:90:AB -> 123456    7890AB
+2. Insert FFFEE in the middle
+	1. 123456    7890AB -> 1234 56FF FE78 90AB
+3. Invert 7th bit
+	1. 1***2***34 56FF FE78 90AB
+	2. 2 = 0010 -> 0000 = 0x0
+	3. 1034 566FF FE78 90AB <- Final answer
+
+
+##### Configure EUI-64
+
+```
+R1(config)# int g0/0
+R1(config)# no shut
+R1(config)# ipv6 address 2001:db8::/64 eui-64
+```
+
+2001:db8 Prefix + EUI-64 id to generate address for this interface
+
+##### Global Unicast
+
+Public
+Must Register to use them globally unique
+
+Originally defined as the 2000::/3 block
+
+2001:0DB8:8B00:0001:0000:0000:0001/64
+
+2001:0DB8:8B00 = 48 bit "global routing prefix" assigned by ISP
+0001 = 16 bit subnet identifies the Enterprise to make various subnets
+0000:0000:0001 = 64-bit interface identifier the host portion of the address
+
+3 Parts -
+1. Global Routing Prefix
+2. Subnet Identifier
+3. Interface Indentifier
+
+**Unique Local**
+1. Private addresses, cannot be used over the Internet
+2. Don't need to be globally unique (should be)
+3. Uses block FC00::/7
+4. Later update required 8th bit set to 1, so first 2x digits must be **FD**
+
+FD45:93AC:8A8F:0001:0000:0000:0001/64
+
+FD = Unique local address
+45:93AC:8A8F = 40-bit global ID should be **random**
+0001 = 16-bit subnet identifier
+0000:0000:0001 = 64-bit interface identifier
+
+**Link Local Address**
+
+Automatically generated on IPv6 Interfaces
+
+```
+R1(config)# int g0/0
+! create ipv6 ip on a interface
+R1(config)# ipv6 enable
+```
+
+Uses address block FE80::/10
+
+ONLY FE80
+
+Interface ID uses EUI-64 rules
+
+Link-Local means that these address are used for communication within a single link (subnet)  Routers will not route packets with a link-local destination IPv6 address
+
+Uses: 
+* Routing Peers
+* Next-hop address for static routes
+* Neighbor Discovery (NDP, IPv6's replacement for ARP)
+
+**Multicast**
+
+Uncast: one-to-one
+Broadcast: One source to all destinations
+Multicast: One source to multiple destinations (that have joined the multicast group)
+
 
