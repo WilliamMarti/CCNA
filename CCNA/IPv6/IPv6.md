@@ -197,4 +197,70 @@ Uncast: one-to-one
 Broadcast: One source to all destinations
 Multicast: One source to multiple destinations (that have joined the multicast group)
 
+IPv6 use FF00::/8
+
+IPv6 **does not** Broadcast
+
+IPv6 defines multicast "scopes" which indicate how far the packet should be forwarded
+
+Link Local (FF02) which stay in the local subnet
+
+##### IPv6 Multicast Scope
+
+**Interface-Local (FF01)** - Packet doesn't leave device. Can be used to send traffic to a service within the device
+
+**Link-Local (FF02)** - Packet remain in the local subnet.  Routers will not route the packet between subnets
+
+**Site-Local (FF05)** - Packet can be forwared by routers.  Should be limited to a single physical location (not forwarded over WAN)
+
+**Organization-Local (FF08)** - Winder in scope than Site-Local.  Can be entire Company/Organization.
+
+**Global (FF0E)** - No boundaries.  Possible to be routed over the Internet
+
+##### Anycast
+
+New feature of IPv6
+
+one-to-one-of-many
+
+Multiple routers are configured with the same IPv6 address
+
+Use Routing protocol to advertise that address.  Routers will forward to nearest router with configured IP
+
+No specific address range
+
+```
+R1(config)# int g0/0
+R1(config-if)# ipv6 address 2001:db8:1:1::99/128 anycast
+```
+
+```
+! unspecified IPv6 address
+! For device thtat doesn't yet know its v6 address
+::
+```
+
+IPv6 default routes are configured to ::/0
+Same as 0.0.0.0/0
+
+```
+! Loopback
+! Test protocol stack on local device
+::1
+```
+
+Messages to Loopback are processed within the local device, but not sent to other devices.
+
+IPv4 equivalent to 127.0.0.1/8
+
+###### RFC - Request for Comment
+
+RFC5952 - A recommendation for IPv6 Address Text Representation
+Before this IPv6 was more flexible
+* Could remove leading 0's OR leave them
+* Replace all 0's with :: or leave them
+* Upper OR lower case
+
+
+
 
