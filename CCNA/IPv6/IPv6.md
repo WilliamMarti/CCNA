@@ -253,7 +253,7 @@ Messages to Loopback are processed within the local device, but not sent to othe
 
 IPv4 equivalent to 127.0.0.1/8
 
-###### RFC - Request for Comment
+##### RFC - Request for Comment
 
 RFC5952 - A recommendation for IPv6 Address Text Representation
 Before this IPv6 was more flexible
@@ -261,6 +261,164 @@ Before this IPv6 was more flexible
 * Replace all 0's with :: or leave them
 * Upper OR lower case
 
+RFC5952
 
+* Leading MUST be removed
+* :: MUST be used to shorten the longest string of all-0 quartets 
+	* (if only 1x all-0, leave it as is)
+* If 2x equal-length choices for the ::, use :: to shorten the one to the left
+* Hexidecial chars MUST be lower case
+
+###### IPV6 Header
+
+* Length - 4 bits
+* Indicates the version of ID that is used
+* Fixed value of 6(0b0110)
+
+##### Traffic Class
+
+* Length - 8 bits
+* Used for QoS
+
+##### Flow Label
+
+* Length - 20 bits
+* Used to identify traffic "flows" (communication between a specific sources and destinations)
+
+##### Payload Length
+
+* Length 16 bits
+* Indicates the length of the payload
+* Length of the IPv6 Header itself isn't included
+
+##### Next Header
+
+* Length - 8 bits
+* Indicates the type of the "next header"
+	* TCP or UDP
+* Same function as the IPv4 "Protocol" field
+
+###### Hop Limit Header
+
+- Length 8 bits
+- Value is decremented by 1 by each router that forwards it.  If it reaches 0, the packet is discarded
+- Same function as the Ipv4 header 'TTL' field
+
+##### Source / Destination Header
+
+- Length - 128 bits EACH
+- Contain IPv6 address of a packets source and a packets destination
+
+##### Solicited-Node Multicast Address
+
+An IPv6 solicited-node multicast address is calculated from a unicast address
+
+ff02:0000:0000:0000:0000:0001 + last 6 hex digits of unicast address
+
+unicast address = 2001:0db8:0000:0001:0f2a:4ffff:fca3:00b1
+
+== ff02::1:ffa3:b1
+
+##### NDP - Neighbor Discovery Protocol
+
+Various function, one of which is to replace ARP.
+	ARP no longer used in IPv6
+
+ARP-lie function of NDP uses ICMPv6 and solicited-node multicast addresses to learn the MAC address of other hosts
+	ARP uses Broadcast in v4
+
+2x Message Types
+
+1. Neighbor Solicitation (NS) = ICMPv6 Type 135
+2. Neighbor Advertisement (NA) = ICMPv6 Type 136
+
+IPv4 ARP Table = IPv6 Neighbor Table
+
+```
+R1# show ipv6 neighbor
+```
+
+Another function of NDP allows Hosts to discover routers on the local network
+
+2x Messages
+
+1. Router Solicitation (RS) = ICMPv6 Type 133
+	1. Sent to multicast address FF02::2 (all routers)
+	2. Asks all routers on the local link to identify themselves
+	3. Sent when an interface is enabled/host is connected to the network
+2. Router Advertisement (RA) = ICMPv6 Type 134
+	1. Sent to multicast FF02::1 (all nodes)
+	2. Router announces its presence, as well as other info about the link
+	3. Those messages are sent in response to RS messages
+	4. Also sent periodically, even if the router hasn't received an RS
+
+##### SLAAC - Stateless Address Auto-Configuration
+
+- Hosts use the RS/RA message to learn the IPv6 prefix of the local link (2001:db8::/64) and the automatically 
+- When using the #ipv6 address prefix/prefix-length eui-64 command you need to manually enter the prefix
+- With the "#ipv6 address auto config" command, you don't need the prefix.  The device used NDP to learn the prefix on the local link
+- Device will use EUI-64 to generate the interface ID or it will be randomly generated (depending on the device/maker)
+
+
+##### DAD - Duplicate Address Detection
+
+- Check if other devices are using the same v6 address
+- Happens any time a device is initialized as a v6 address is configured 
+- Uses NS and NA
+- Host will send NS to its own address.  If it doesn't get a reply it knows its unique
+
+##### IPv6 Static Routing
+
+Works same as IPv4
+
+v4 and v6 processes are separate on the router.  2x different routing tables.  
+
+v4 routing is enabled by default.
+v6 routing is disabled by default
+
+enable v6 with
+
+```
+R1(config)# ipv6 unicast-routing
+```
+
+If v6 is disabled, router will be able to send/receive v6 traffic, but not route v6 traffic.  
+
+Connected network route is automatically added for each connected network
+
+Local host route is automatically added for ac
+
+Router for link-local addresses are not added to the routing table
+
+```
+R1(config)# ipv6 route dest/prefix-length {next-hop|exit  interface [next-hop]} [ad]
+```
+
+##### Directly Attached Static Route
+Only exit interface is specified
+
+```
+R1(config)# ip6 route 2001:db8:0:3::/64 g0/0
+```
+
+##### Recursive Static Route
+
+Only next hop is specified
+
+```
+R1(config)# ip6 route 2001:db8:0:3::/64 2001:db8:0:12:2
+```
+
+Recursive because of 2x loopups
+1. 1 for dest network
+2. 1 for next-hop IP
+
+##### Fully specified Static Route
+
+Both exit interface and next hop are specified 
+
+```
+R1(config)# ip6 route 2001:db8:0:3::/64 g0/0 2001:db8:0:12:2
+```
 
 
