@@ -422,3 +422,29 @@ R1(config)# ip6 route 2001:db8:0:3::/64 g0/0 2001:db8:0:12:2
 ```
 
 
+##### Routes
+
+**Network Route**
+
+```
+R1(config)# ipv6 route 2001:db8:0:3::/64 2001:db8:0:12::2
+```
+
+**Host Route**
+
+```
+R1(config)# ipv6 route 2001:db8:0:1::100/64 2001:db8:0:12::1
+R1(config)# ipv6 route 2001:db8:0:3::100/64 2001:db8:0:12::2
+```
+
+**Default Route**
+
+```
+R1(config)# ipv6 route ::/0 2001:db8:0:12::1
+```
+
+**Floating Static Route**
+
+Higher AD than the primary route
+
+Link-local next hop MUST have next-hop and exit interface specified
