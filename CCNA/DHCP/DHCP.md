@@ -32,15 +32,24 @@ R1(dhcp-config)# lease 0 5 30
 ```
 
 ```
-show dhcp bindings
+R1# show dhcp bindings
 ```
 
 ```
+! DHCP Relay
 R1(config)# int g0/1
 R1(config-if)# ip helper-address 192.168.10.10
 ```
 
 ```
+! DHCP Client
 R1(config)# int g0/1
 R1(config)# ip address dhcp
 ```
+
+```
+! Windows 
+# ipconfig /release
+# ipconfig /renew
+```
+

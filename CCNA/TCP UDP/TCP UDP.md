@@ -48,6 +48,10 @@ Source Host has a timeout waiting for a ACK
 TCP Window Size
 Allow more data to be sent before an ACK is required
 
+**TCP Sliding Window** - Increases or decreases the rate at which at which the send traffic as needed
+- When a packet is dropped it will be retransmitted
+- When a drop occurs, sender will reduce the rate it sends traffic.
+- Gradually increases rate again
 ## **UDP**
 
 UDP is NOT connection oriented
