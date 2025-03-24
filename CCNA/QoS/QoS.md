@@ -146,3 +146,53 @@ Developed with Cisco to bring all these values together and standardize their us
 | Streaming Video    | AF3X |
 | High Priority Data | AF2X |
 | Best Effort        | DF   |
+
+##### Trust Boundary
+
+Defines when devices trust/don't trust the QoS markings of received messages
+
+If markings are trusted, the device will forward the message without changing the markings
+
+If markings aren't trusted the device will change the markings according to the configured policy
+
+If IP Phone is connected to the switchport, it is recommended to move trust boundary to the phone.  
+	Done via config on switchport
+
+##### Queuing / Congestion Control
+
+Essential part of QoS is the use of multiple queues
+
+Classification used to place traffic in the appropriate queue
+
+Device can only forward one frame at a time, so a scheduler is used to device which queue traffic is forwarded from next
+
+Prioritization allows the scheduler to give certain queues more priority than others
+
+![[QOS Congestion Control.PNG]]
+
+Common scheduling method: weighted round robin
+- round-robin - packet taken from each queue cyclically
+- weighted - more data taken from high priority queues
+
+**CBWFQ** (Class Based Weighted Fair Queuing) -
+Weighted Round-Robin while guaranteeing each queue a certain percentage of t he interface, bandwidth during congestion.
+
+Round-Robin is not ideal for voice/video.  Can add delay/jitter
+
+**LLQ** (Low Latency Queuing) 
+Designate one or more queues as strict priority queues
+
+If there is traffic in the queue, the scheduler will ALWAYS take the next packet from that queue until it is empty.  
+
+Good for voice/video, can starve other queues
+
+##### Shaping and Policing
+
+Used to control the rate of traffic
+
+**Shaping** - Buffer traffic in a queue
+
+**Policing*** - Drops traffic if the traffic rate goes over the configured rate.  
+	"Burst" traffic over the configured rate is allowed for a short period
+
+
