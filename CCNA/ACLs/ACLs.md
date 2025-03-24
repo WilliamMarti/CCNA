@@ -13,7 +13,7 @@ Can filter on:
 
 ACLs are configured globally (global config mode)
 
-Ordered sequnce of ACEs(Access Control Entries)
+Ordered sequence of ACEs(Access Control Entries)
 
 ACL must be applied to an interface to take effect.  Applied **INBOUND** and **OUTBOUND**
 
