@@ -24,3 +24,14 @@ Various standards that provide different speeds and different standards are avai
 | T3  | E3  | 44.736 Mbps |
 Leased Lines have a higher cost, install time, and slower speeds vs Ethernet
 
+**MPLS** - Multi-Protocol Label Switching
+
+Similar to Internet, service provider MPLS networks are sshared infrastructure because many customer Enterprises connect and share the same infrastructure
+
+Label Switch in the name of MPLS allows VPNs to be created over the MPLS infrastructure through the use of labels
+
+Label separate the traffic of customers
+
+CE Router = Customer Edge
+PE Router = Provider Edge
+P Router = Provider Core
