@@ -35,3 +35,16 @@ Label separate the traffic of customers
 CE Router = Customer Edge
 PE Router = Provider Edge
 P Router = Provider Core
+
+![[MPLS.PNG]]
+
+When the PE ROuter receives frames from CE routers they add a label to the frame.
+
+The **labels** are used to make forwarding decisions with the service provider network.  *not the destination IP*
+
+CE Routers do not use MPLS, only the PE/P routers
+
+When using a Layer 3 MPLS VPN, the CE and PE routers peer using OSPF(or BGP), for example, to share routing information
+
+
+ 
