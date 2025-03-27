@@ -88,3 +88,58 @@ Control and provisioning of Access Points.
 
 Protocol used to communicate between LWAP and WLC.  Based on an older protocol, LWAPP(Lightweight Access Point Protocol)
 
+Two tunnels are created between each AP and the WLC
+- **Control Tunnel (UDP port 55246)** - Tunnel used to configure the APs and control/manage the operations.  All traffic in this tunnel is encrypted by default
+- **Data Tunnel (UDP port 5247)** - All traffic from wireles clients is sent through this tunnel to the WLC.  Does *not* go directly to the wired network
+	- Traffic in this tunnel is not encrypted by default but you can configure it to be encrypted with DTLS (Datagram Transport Layer Security)
+
+Lightweight Benefits
+- Scalability
+- Dynamic Channel Assignment
+- Transmit Power Optimization
+- Self-Healing Coverage
+- Seamless Roaming
+- Client Load Balancing
+- Security/QoS Management
+
+##### Lightweight AP Modes
+
+**Local** - Default mode where the AP offers a BSS(s) for clients to associate with
+
+**Flex Connect** - Allows the AP to locally switch traffic between the wired and wireless network if the tunnels to the WLC go down
+
+**Sniffer** - AP does *not* offer a BSS for clients.  Captures 802.11 frames to send to a sniffer like wireshark
+
+**Monitor** - AP does *not* offer a BSS.  Dedicated to receiving 802.11 frames to detect rogue devices
+
+**Rogue Detectors** - AP does not use its radio.  Listens to **wired** traffic.  Receives a list of suspected rogue clients from WLC correlates ARP messages to info from WLC.
+
+**SE-Connect (Spectrum Expert Connect)** - AP does not offer BSS.  Used for Spectrum Analysis
+
+**Bridge/Mesh** - Can be bridge between sites over long distances.  Or a mesh between APs.
+
+**Flex+Bridge** - FlexConnect + Bridge, locally forward traffic even if WLC is lost.  
+
+##### Cloud Based AP
+
+Between Autonomous and split MAC architectures
+
+Cisco Meraki popular cloud based solution
+
+Meraki Dashboard can be used to configure APs, monitor, reports
+
+Traffic is *not* sent to the cloud, sent directly to wired network like when using autonomous APs.
+	Only management traffic is sent to the Cloud
+
+##### 4 WLC Deployment Models
+
+1. Unified - Hardware Appliance in a central location in the network
+	1. 6000 APs
+2. Cloud Based - WLC is a VM running in a private cloud or data center.  Not a Meraki style
+	1. 3000 APs
+3. Embedded - WLC on a switch
+	1. 2000 APs
+4. Mobility Express - WLC on a AP
+	1. 100 APs
+
+

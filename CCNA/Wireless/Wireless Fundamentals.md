@@ -147,3 +147,7 @@ A repeater with a single radio must operate on the same channel or the AP, butr 
 APs used specialized antennas that focus most signal power in one direction, which allows the wireless connection to be made over long distances.  
 
 Connection can be point-to-point or point-to-multipoint
+
+##### Wireless Frame
+
+![[80211-frame.PNG]]
