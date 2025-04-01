@@ -163,6 +163,46 @@ Certification was developed after WEP was proven to be vulnerable.  Includes:
 	- SAE (Simultaneous Authentication of Equals) protects the four-way handshake when using personal mode authentication.
 	- Forward Secrecy prevents data from being decrypted after its been transmitted
 
+DHCP Option 43 can be used to tell APs the IP address of their WLC
 
+WLC **port** are the physical ports that cables connect to
 
+WLC Interfaces are  the logical interfaces within the WLC(SVI on a switch)
 
+**Service Port**  - Dedicated management port.  Used for out-of-band management.  Most connect to switch access port, only supports one vlan.  Used to connect while WLC is booting/system recovery
+
+**Distribution Port** - Standard network port to connect to the "distribution network".  Usually a trunk.  Can be a LAG
+
+**Console** - Standard RJ45 or USB Console port
+
+**Redundancy Port** - Used or USB console port
+
+##### WLC Interfaces
+
+**Management** - Management traffic such as telnet/SSH/HTTPS/RADIUS/CAPWAP tunnel are also formed to/from the management interface. 
+
+**Redundancy Management** - Where 2 WLCs are connected by RP ports one is "active" and the other is "standby".  These interfaces can be used to manage the "standby" WLC
+
+**Virtual Interfaces** - Used when communicating with wireless clients to relay DHCP requests, perform client web authentication
+
+**Service Port Interfaces** - If service port is used.  This interface is bound to it and used for out-of-band management
+
+**Dynamic Interface**  - Interfaces used to map a WLAN to a VLAN.  For example traffic from the internal WLAN will be sent to the wired network from the WLCs "Internal" dynamic Interface
+
+**Web Authentication** - After client gets an IP and tries to access a web page, they will have to enter a username/password
+
+**Web Passthrough** - Similar to above, but no username/password are required.  Warning of statement is displayed and the client has to agree to gain access to the Internet
+
+**Conditional** and **Splash Page**  - web redirect options are similar but additional require 802.1x L2 auth
+
+**CPU ACLS** - Are used to limit traffic to the CPU of the WLC, such as telnet/SSH/HTTPS traffic to management NETO data plane traffic
+
+WLC QOS:
+- Platinum (Voice)
+- Gold (Gold)
+- Silver (Silver)
+- Bronze (Bronze)
+
+WLC *passwords* can be in ASCII or HEX
+
+ASII must be at least 8 characters long

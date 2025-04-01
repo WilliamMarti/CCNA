@@ -160,4 +160,31 @@ API keys must be rotated
 
 Secure authentication framework that is widely used in modern web apps.
 Provide *delegation* , granting 3rd party apps limited access to resources on behalf of the resources owner.
-No need
+No need to share the resources owners credentials with the 3rd party
+
+Ex:
+- Logging in with Google
+- Connect apps to social media account
+- Calendar integrating
+
+4x Parties:
+1. Resources Owner
+2. Client App-account
+3. Auth Server
+4. Resource Server
+
+Process:
+
+1. **Client App** - Requests auth from resource owner(you) to access the resource (Google Cal)
+2. **Resource Owner** - Grants auth by logging into their account and giving permissions
+3. **Client App** - exchanges the authorization grant for an access token from the auth server
+4. **Auth Server** - provides an access token to the resource server
+5. **Client App** - send the access token to the resource server
+6. Resource Server validates the access token and provides the requested resource(calendar data) to the client app
+
+Access Token in #4 functions just like bearer tokens
+- It grants access to the specified resources within the appropriate scope of access
+- Access tokens (granted by Auth server) to obtain new access tokens without requiring the user to log in every time.  
+
+
+ 
