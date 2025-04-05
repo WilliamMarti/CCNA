@@ -21,7 +21,7 @@
 - 802.11n is also known a "HT" wifi
 - 802.11ac is also known as "Very HI" Wifi
 
-**FCS (Frame Check Sequence)** - Same as iin an Ethernet frame used to check for errors
+**FCS (Frame Check Sequence)** - Same as in an Ethernet frame used to check for errors
 
 ##### Association Process
 

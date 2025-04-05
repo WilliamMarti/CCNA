@@ -14,7 +14,6 @@ Recommended to separate "voice" traffic and "data" traffic to different vlans
 
 **Audio Quality**
 
-
 | Type   | Limits        |
 | ------ | ------------- |
 | Delay  | 130ms or less |
@@ -129,7 +128,7 @@ Defines eight DSCP values for backwards compatibility with IPP
 
 There's bits that were added for DSCP are set to 0 and originally IPP bits are used to make 8 values
 
-CH# -> DSCP = CS# x 8
+CS# -> DSCP = CS# x 8
 CS1 = DSCP 8
 CS2 = DSCP 16
 CS3 = DSCP 24

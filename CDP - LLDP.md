@@ -1,7 +1,7 @@
 
 CDP/LLDP share info with and discover info about neighboring devices
 
-L2 Discovery BUT t hey can share L3 info
+L2 Discovery BUT they can share L3 info
 
 CDP = Cisco proprietary
 
@@ -80,7 +80,7 @@ R1(config-if)# lldp recieve
 ```
 
 ```
-! set llde[p message timer
+! set lldp message timer
 R1(config)# lldp timer <seconds>
 ! set lldp holdtime
 R1(config)# lldp holdtime <seconds>

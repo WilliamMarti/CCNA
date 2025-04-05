@@ -19,14 +19,14 @@ Model for enabling ubiquitous, convenient, on-demand network access to a shared 
 1. On Demand Serf Service
 2. Broad Network Access
 3. Resource Pooling
-4. Rapid Elasicity
+4. Rapid Elasticity
 5. Measured Service
 
 3 Service Models
-1. Saas - Software as a Service
+1. SaaS - Software as a Service
 	1. GSuite
 2. PaaS - Platform as a Service 
-	1. Google App Engine
+	2. Google App Engine
 3. IaaS - Infrastructure as a Service
 	1. AWS EC2, Google Compute Engine
 

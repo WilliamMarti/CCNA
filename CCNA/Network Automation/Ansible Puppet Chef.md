@@ -32,7 +32,7 @@
 - Files
 	- Resources
 		- Define config objects
-	- Recipies
+	- Recipes
 		- Outline the logic and actions of the tasks to perform
 	- Cookbooks
 		- A set of related recipes group together

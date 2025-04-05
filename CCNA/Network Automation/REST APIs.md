@@ -36,7 +36,7 @@ Ex: Accept Header
 
 `Accept: application/json`
 
-REST APIs dont *have* to use http
+REST APIs don't *have* to use http
 
 ##### HTTP Response
 

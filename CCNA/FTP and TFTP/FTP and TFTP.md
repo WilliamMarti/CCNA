@@ -45,7 +45,7 @@ Local Step communication - Client and server send a message and wait for a reply
 ##### FTP
 
 Standardized 1971
- c
+
 TCP port 20 and 21
 
 Has authentication, but plain text

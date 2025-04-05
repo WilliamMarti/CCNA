@@ -96,7 +96,7 @@ SSID does not have to be unique
 **IBSS** - Independent Basic Service Set.  Wireless network in which two or more wireless devices connect directly without using an AP(Access Point)
 - ad hoc (air drop)
 
-**BSS** - Basic Service Set - King of Infrastructure Service Set in which clients connect to each other via an AP, but not directly to each other
+**BSS** - Basic Service Set - Kind of Infrastructure Service Set in which clients connect to each other via an AP, but not directly to each other
 
 **BSSID** (Basic Service Set ID) - is used to uniquely identify the AP
 - Other APs can use the same SSID but not the same BSSID

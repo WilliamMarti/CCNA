@@ -9,7 +9,7 @@ Separate routing tables
 - Router Interfaces, SVI, and routed ports on multilayer switch can be configured in a VRF
 - Traffic in one VRF cannot be forwarded out of an interface in another VRF
 - VRF is commonly used to facilitate MPLS
-	- Kind we are talking about here is VRF-LIte (VRF without MPLS)
+	- Kind we are talking about here is VRF-Lite (VRF without MPLS)
 
 VRF commonly used by service providers to allow one device to carry traffic from multiple customers
 - Each customers traffic is isolated from the others

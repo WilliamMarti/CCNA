@@ -4,7 +4,7 @@ Benefits
 - Network becomes more scalable.  Net deployments, network wide changes
 - Network wide policy compliance (standard configs / software versions)
 - Improved efficiency compliance (standard configs / software versions)
-- Improved effiency of network operations reduces the opex
+- Improved efficiency of network operations reduces the opex
 	- Each task requires fewer man-hours
 
 Tools
@@ -15,7 +15,7 @@ Tools
 
 **Data Plane** - All task involved in forwarding user data/traffic from one interface to another
 
-**Control Plane** - Function that build ARP/MAC Tables to control taffic flow
+**Control Plane** - Function that build ARP/MAC Tables to control traffic flow
 	Controls what Data Plane does.  OSPF/STP don't control forwarding of data packets themselves
 
 In traditional networking the data and control planes are *distributed* among each network device
@@ -25,7 +25,7 @@ In traditional networking the data and control planes are *distributed* among ea
 
 Operations of Management and Control plane are usually managed by the CPU
 
-CPU is typically slow(relativy)
+CPU is typically slow(relatively)
 
 ASIC (Application-Specific Integrated Circuit) is used for Data Plane
 

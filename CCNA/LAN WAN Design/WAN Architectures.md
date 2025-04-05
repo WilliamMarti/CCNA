@@ -26,7 +26,7 @@ Leased Lines have a higher cost, install time, and slower speeds vs Ethernet
 
 **MPLS** - Multi-Protocol Label Switching
 
-Similar to Internet, service provider MPLS networks are sshared infrastructure because many customer Enterprises connect and share the same infrastructure
+Similar to Internet, service provider MPLS networks are shared infrastructure because many customer Enterprises connect and share the same infrastructure
 
 Label Switch in the name of MPLS allows VPNs to be created over the MPLS infrastructure through the use of labels
 
@@ -38,7 +38,7 @@ P Router = Provider Core
 
 ![[MPLS.PNG]]
 
-When the PE ROuter receives frames from CE routers they add a label to the frame.
+When the PE Router receives frames from CE routers they add a label to the frame.
 
 The **labels** are used to make forwarding decisions with the service provider network.  *not the destination IP*
 

@@ -1,4 +1,4 @@
-##### Integrity
+ ##### Integrity
 
 Ensure a message is *not* modified in transit
 
