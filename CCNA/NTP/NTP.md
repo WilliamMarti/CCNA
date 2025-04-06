@@ -85,4 +85,10 @@ R1(config)# ntp server <ip-address> key <key-number>
 R1(config)# ntp peer 10.0.23.1 key <key-number>
 ```
 
- 
+
+
+##### NTP Master
+
+Router becomes an authoritative name server
+
+Liste
