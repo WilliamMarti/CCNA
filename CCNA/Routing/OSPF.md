@@ -171,7 +171,7 @@ Router(config-if) ip ospf 1 area 0
 
 OSPF Network Types refer to the type of connection between OSPF neighbors
 
-3 OFPS Network Types:
+5 OFPS Network Types:
 
 1. Broadcast
 	1. Enabled by default on **Ethernet** and **FDDI** (FIber Distributed Data Interfaces)
@@ -179,6 +179,8 @@ OSPF Network Types refer to the type of connection between OSPF neighbors
 	1. Enabled by default on PPP and HDLC (High-level Data Link Control) interfaces
 3. Non-Broadcast
 	1. Enabled by default on Frame-Relay and X.25 interfaces
+4. Point-to-Multipoint Broadcast
+5. Point-to-Multipoint Non-broadcast
 
 
 ###### **Broadcast** 
@@ -189,9 +191,6 @@ Dynamically discover neighbors by sending / listening tto OSPF Hello Messages us
 
 Routers that are not a DR or BDR are a DROTHER
 
-
-
-
 ###### **Point-to-Point**
 
 Default for serial interfaces using PPP or HDLC encapsulation
@@ -199,6 +198,26 @@ Default for serial interfaces using PPP or HDLC encapsulation
 DR and BDR are not elected.  Only 2 routers so no point
 Form FULL adjacency with each other
 
+###### **Nonbroadcast**
+
+Nonbroadcast networks do not allow multicast, need manual configuration of OSPF neighbors with the `neighbor` command
+
+`ip ospf network non-broadcast`
+
+###### **Point-to-Multipoint Broadcast
+
+Similar to point-to-point but have timers as:
+
+Hello: 30s
+Dead 120s
+
+`ip ospf network point-to-multipoint`
+
+###### **Point-to-Multipoint Non-Broadcast
+
+Do not allow multicast, need manual configuration of OSPF neighbors with the `neighbor` command
+
+`ip ospf network point-to-multipoint non-broadcast`
 ##### **DR/BDR election**
 
 1. Highest OSPF interface priority
