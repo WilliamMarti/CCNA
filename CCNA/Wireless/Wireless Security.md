@@ -41,12 +41,12 @@ Original 802.11 standard included 2 options for Auth
 	- Client encrypts challenge phrase using WEP key and sends it back
 	- AP compares clients encrypted challenge phrase with APs encrypted challenge phrase.  
 
-##### EAP (Extensible Authentication Protocl)
+##### EAP (Extensible Authentication Protocol)
 
 - Auth Framework
 - Defines a standard set of functions that are used by the various EAP Method
 	- LEAP/EAP-FAST/PEAP/EAP-TLS
-- Integrated with 802.1x, provder port baesd access control
+- Integrated with 802.1x, provider port based access control
 
 ##### 802.1x
 
@@ -122,13 +122,14 @@ Developed by Cisco
 - More secure than CCMP
 - Its increased efficiency allows higher data throughput than CCMP
 - It is used in WPA3
-- 2 x Algorithims
+- 2 x Algorithms
+	- AES (Advanced Encryption Standard) counter mode for encryption
 	- GMAC (Galois Message Authentication Code) used as a MIC for integrity
-	- AES counter mode for encryption
 
-##### Wifi Protected Access
 
-Wifi Alliance developed 3x WPA certification for wireless devices
+##### Wi-Fi Protected Access
+
+Wi-Fi Alliance developed 3x WPA certification for wireless devices
 - WPA
 - WPA2
 - WPA3
@@ -151,7 +152,7 @@ Certification was developed after WEP was proven to be vulnerable.  Includes:
 
 - Released in 2004
 - CCMP provides encryption/MIC
-- 802.1x authentication.  Enterprise or Person
+- 802.1x authentication.  Enterprise or Personal
 
 ##### WPA3
 
@@ -205,4 +206,4 @@ WLC QOS:
 
 WLC *passwords* can be in ASCII or HEX
 
-ASII must be at least 8 characters long
+ASCII must be at least 8 characters long

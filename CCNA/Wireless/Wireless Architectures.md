@@ -7,7 +7,7 @@
 - The time in microseconds the channel will be dedicated for transmission of the frame
 - and identifier for the association(connection)
 
-**Addresses** - Up to 4 addresses can be present on a 802.11 frame which are present depends onthe message type
+**Addresses** - Up to 4 addresses can be present on a 802.11 frame which are present depends on the message type
 - Destination Address (DA) Final recipient of the frame
 - Source Address (SA) Original sender of the frame
 - Receiver Address (RA) Immediate recipient of the frame
@@ -18,8 +18,8 @@
 **QoS Control** - Used in QoS to prioritize certain traffic.
 
 **HT(High Throughput) Control** - Added in 802.11n to enable High Throughput operations
-- 802.11n is also known a "HT" wifi
-- 802.11ac is also known as "Very HI" Wifi
+- 802.11n is also known a "HT" Wi-Fi
+- 802.11ac is also known as "Very HT" Wi-Fi
 
 **FCS (Frame Check Sequence)** - Same as in an Ethernet frame used to check for errors
 

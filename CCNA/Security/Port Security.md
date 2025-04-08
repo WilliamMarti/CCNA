@@ -52,13 +52,13 @@ S1(config)# errdisable recovery interval 180
 ##### Violation Modes
 
 **Shutdown**  - Effectively shuts down the port by placing it in an err-disabled state
-- Generates syslog
+- Generates syslog/SNMP
 - Violations counter is set to 1
 **Restrict** - Switch Discards traffic from unauthorized MACs.
 - Interface is NOT disabled
 - Generates syslog/SNMP message for each unauthorized MAC
 - Violation counter is incremented by 1 for each violation
-**Protect** - Switch discards traffci from unauthorized MAC.
+**Protect** - Switch discards traffic from unauthorized MAC.
 - Interface is *not* disabled
 - Does NOT generate syslog/SNMP messages
 
