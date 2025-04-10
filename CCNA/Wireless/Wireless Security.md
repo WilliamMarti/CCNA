@@ -161,7 +161,7 @@ Certification was developed after WEP was proven to be vulnerable.  Includes:
 - 802.1x authentication.  Enterprise or Persona;
 - Additional security features
 	- PMF(Protected Management Frames) protecting 802.11 management frame from eavesdropping/forging
-	- SAE (Simultaneous Authentication of Equals) protects the four-way handshake when using personal mode authentication.
+	- SAE (Simultaneous Authentication of Equals) protects the four-way handshake when using **Personal** mode authentication.
 	- Forward Secrecy prevents data from being decrypted after its been transmitted
 
 DHCP Option 43 can be used to tell APs the IP address of their WLC

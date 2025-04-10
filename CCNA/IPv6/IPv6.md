@@ -448,3 +448,31 @@ R1(config)# ipv6 route ::/0 2001:db8:0:12::1
 Higher AD than the primary route
 
 Link-local next hop MUST have next-hop and exit interface specified
+
+
+##### IPv6 Address Blocks
+
+https://www.ripe.net/media/documents/ipv6-address-types.pdf
+
+**Non-Routable**
+FE80::/10 0 link-local unicast addresses
+FF02::/16  link-local multicast addresses
+
+FF = Multicast
+
+**Globally Routable**
+2000::/3 - 2000 - 3FFF
+
+**Unique Local Unicast Addresses**
+FC00::/7 --
+FC00::/8
+FD00::/8
+
+Not globally routable, but routable within an organization
+
+
+**Node-Local Multicast Addresses**
+FF01::/16
+
+
+

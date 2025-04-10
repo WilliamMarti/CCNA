@@ -185,7 +185,7 @@ OSPF Network Types refer to the type of connection between OSPF neighbors
 
 ###### **Broadcast** 
 
-Dynamically discover neighbors by sending / listening tto OSPF Hello Messages using multicast address 224..0.0.5
+Dynamically discover neighbors by sending / listening to OSPF Hello Messages using multicast address 224..0.0.5
 
 **DR** and **BDR** must be elected on each subnet.  Only DR if there are no OSPF neighbors
 

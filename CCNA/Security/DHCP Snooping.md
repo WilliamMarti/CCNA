@@ -1,3 +1,7 @@
+
+[Configuring DHCP Snooping](https://www.cisco.com/c/en/us/td/docs/dcn/nx-os/nexus3548/103x/configuration/security/cisco-nexus-3548-nx-os-security-configuration-guide-103x/m-configuring-dhcp-snooping.pdf)
+
+
 Security feature of switches that is used to filter DHCP messages received by untrusted ports
 
 Only filters DHCP messages
@@ -25,7 +29,7 @@ If a DHCP message is received on a *untrusted* port, inspect as follows:
 * If its a DHCP server(OFFER,ACK, or NAK) message, **Discard** it.
 * IF message is a **Client**, perform the following checks
 	* DISCOVER/REQUEST: Check if frame source/MAC and DHCP message CHADDR fields match
-		* match = forward, mismatch = disccard
+		* match = forward, mismatch = discard
 	* RELEASE/DECLINE: Check if the packets source IP address and the receiving interface match the entry in the DHCP Snooping Binding Table.
 		* match = forward, mismatch = discard
 
@@ -47,9 +51,10 @@ DHCP Snooping can limit the rate at which DHCP messages care allowed to enter an
 
 If the rate of DHCP message crosses to configured limit the interface is err-disabled
 
-Similar to port-security, the interface can be manually re-enabled or automatically re-enabled with the errdisable recovery
+Similar to port-security, the interface can be manually re-enabled or automatically re-enabled with the err-disable recovery
 
 ```
+! limit rate is in pps
 S1(config)# int g0/0
 S1(config-if)# ip dhcp snooping limit rate 1
 S1(config)# errdisable recovery cause dhcp-rate-limit
@@ -65,8 +70,8 @@ Provide additional info about which DHCP relay agent received the clients messag
 
 DHCP relay agents can add Option 82 to messages they forward to the remote DHCP server
 
-With DHCP snooping enabled, by default Cisco Switches will add Option 82 to DHCP messages they receive from clinets
-	Even if the switch isnt acting as a DHCP relay agent
+With DHCP snooping enabled, by default Cisco Switches will add Option 82 to DHCP messages they receive from clients
+	Even if the switch isn't acting as a DHCP relay agent
 
 By Default Cisco switch will drop DHCP message with Option 82 that are received on an untrusted port.
 

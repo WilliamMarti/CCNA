@@ -1,7 +1,12 @@
 
+[Chapter: Understanding and Configuring Dynamic ARP Inspection](https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst4500/12-2/25ew/configuration/guide/conf/dynarp.html)
+
+
+
+
 DAI (Dynamic ARP Inspection) - Security feature of switches that is used to filter ARP messages received on untrusted ports
 
-DAI only filters messages.  Non-ARP messages aren't affected.
+DAI only filters ARP messages.  Non-ARP messages aren't affected.
 
 All ports are untrusted by default
 
@@ -19,9 +24,9 @@ DAI inspects the *senders MAC* and *sender IP* fields of ARP messages received o
 DAI doesn't inspect messages received on trusted ports.  They forward as normal
 
 ARP ACLs can be manually configured to map IP/MAC addresses for DAI to check
-	For hosts no using DHCP
+	For hosts not using DHCP
 
-DAI Can be configured to perform more in-depth checks also but they are option
+DAI Can be configured to perform more in-depth checks also but they are optional
 
 DAI also supports rate-limiting
 - DHCP Snooping and DAI both require work from CPU
@@ -39,8 +44,9 @@ S1# show ip arp inspection interfaces
 
 ```
 S1(config)# int g0/0
-! 25 - Default is 15
-! 2 - Default is 1
+! 25 - Default is 15, in pps
+! 2 - Default is 1 (burst in seconds)
+! Burst (Optional) For burst interval seconds, specify the consecutive interval in seconds, over which the interface is monitored for a high rate of ARP packets. The range is 1 to 15.
 S1(config-if)# ip arp inspection limit rate 25 burst interval 2
 S1(config-if)# int g0/1
 S1(config-if)# ip arp inspection limit rate 10

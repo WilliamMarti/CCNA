@@ -35,4 +35,3 @@ Switch with null VTP domain will auto-join
 VTP Transparent Mode:
 - Own independent Vlan DB
 - Will forward VTP updates in the same domain
-- 
