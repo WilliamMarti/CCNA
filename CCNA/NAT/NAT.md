@@ -112,3 +112,12 @@ R1(config)# ip nat inside source list 1 pool POOL1 overload
 ! OR 
 R1(config)# ip nat inside source list 1 interface g0/0 overload
 ```
+
+
+##### **PAT NAT Config Steps**
+
+1. Assign Inside Interface
+2. Assign Outside Interface
+3. Create ACL for Inside Local Address space
+4. Create NAT POOL for Inside Global
+5. Add NAT config tying together ACL and NAT POOL with overload

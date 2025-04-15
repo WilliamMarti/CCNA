@@ -110,18 +110,18 @@ Interface will automatically have "link-local" address
 
 ##### EUI-64
 
-Extended Unique Indentifier
+Extended Unique Identifier
 
 (Modified) EUI-64 is a method of converting a MAC Address (48 bits) into a 64-bit interface ID
 
 This interface ID can then become the "host portion" of a /64 IPv6 address
 
 Convert MAC --
-1. Divide MAC Addresss in half
+1. Divide MAC Addresses in half
 	1. 12:34:56:78:90:AB -> 123456    7890AB
 2. Insert FFFEE in the middle
-	1. 123456    7890AB -> 1234 56FF FE78 90AB
-3. Invert 7th bit
+	2. 123456    7890AB -> 1234 56FF FE78 90AB
+3. Invert 7th bit (the 2 below)
 	1. 1***2***34 56FF FE78 90AB
 	2. 2 = 0010 -> 0000 = 0x0
 	3. 1034 566FF FE78 90AB <- Final answer
@@ -153,7 +153,7 @@ Originally defined as the 2000::/3 block
 3 Parts -
 1. Global Routing Prefix
 2. Subnet Identifier
-3. Interface Indentifier
+3. Interface Identifier
 
 **Unique Local**
 1. Private addresses, cannot be used over the Internet
@@ -324,7 +324,7 @@ unicast address = 2001:0db8:0000:0001:0f2a:4ffff:fca3:00b1
 Various function, one of which is to replace ARP.
 	ARP no longer used in IPv6
 
-ARP-lie function of NDP uses ICMPv6 and solicited-node multicast addresses to learn the MAC address of other hosts
+ARP-like function of NDP uses ICMPv6 and solicited-node multicast addresses to learn the MAC address of other hosts
 	ARP uses Broadcast in v4
 
 2x Message Types

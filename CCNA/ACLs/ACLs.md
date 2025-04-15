@@ -166,3 +166,15 @@ dscp = match specific DSCP value
 
 Closest to the source as possible
 
+
+
+##### ACL Numbers
+
+| Number     | Type              |
+| ---------- | ----------------- |
+| 1-99       | Standard Numbered |
+| 100-199    | Extended Numbered |
+| 1300-19999 | Standard Numbered |
+| 2000-2699  | Extended Numbered |
+
+

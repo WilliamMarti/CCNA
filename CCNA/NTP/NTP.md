@@ -32,6 +32,9 @@ R1# calendar set hh:mm:ss <1-31> <month> <year>
 
 You want to sync *time* and *calendar*
 
+clock = software clock
+calendar = hardware clock
+
 ```
 ! Sync calendar to clock time
 R1# clock update-calendar
@@ -91,4 +94,4 @@ R1(config)# ntp peer 10.0.23.1 key <key-number>
 
 Router becomes an authoritative name server
 
-Liste
+Listen on all interfaces

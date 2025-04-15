@@ -8,7 +8,7 @@ Examples:
 - Chatbots.  ChatGPT, virtual concierges
 - Gameplay.  Stockfish.  AlphaGo
 
-**Machine Learning** - Subnetof AI that focuses on enabling computers to learn from data and improve without the need for explicit programing
+**Machine Learning** - Subset of AI that focuses on enabling computers to learn from data and improve without the need for explicit programing
 
 Input Data -> Model Learns from Data Patterns -> Make predictions on new data
 
@@ -33,9 +33,8 @@ Examples:
 **Supervised Learning** - 
 - Trains model on labeled dataset
 - Each input provided to the model has corresponding label
-- By examining the label examples the model learns to the relatoionship between the data and the given label
-- By Training on labeled examples, the model learns to classify view unlabeld data with the high accuracy
-
+- By examining the label examples the model learns to the relationship between the data and the given label
+- By Training on labeled examples, the model learns to classify view unlabeled data with the high accuracy
 
 | Advantanges                                    | Disadvantages                                                                        |
 | ---------------------------------------------- | ------------------------------------------------------------------------------------ |
