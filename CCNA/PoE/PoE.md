@@ -1,4 +1,4 @@
-
+ 
 Power over Ethernet
 
 **PSE** - Power Sourcing Equipment (switch)

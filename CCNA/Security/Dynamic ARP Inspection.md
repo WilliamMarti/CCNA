@@ -70,7 +70,8 @@ S1(config)# ip arp inspection validate dst-mac ip src-mac
 
 
 
-
+ARP Inspection Globally
+Trusting on the Interface
 
 
 

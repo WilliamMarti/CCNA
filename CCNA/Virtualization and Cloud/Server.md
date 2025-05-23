@@ -10,7 +10,7 @@ Before Virtualization, 1-to-1 relationship between server and OS
 ![[Virtualization.PNG]]
 
 
-**VMM** - Virtual Machine Monitor, another anme for hypervisotr
+**VMM** - Virtual Machine Monitor, another name for hypervisor
 
 Type of hypervisor that runs  directly on top of the hardware is **Type 1**
 - Vmware ESXi

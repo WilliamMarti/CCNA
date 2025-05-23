@@ -56,7 +56,7 @@ Switch(config-if)# channel-group 1 mode active [passive]
 ```
 
 passive+passive = NO Etherchannel
-active+active= Etherchannel
+active + active = Etherchannel
 active + passive = Etherchannel
 
 ##### Static Etherchannel

@@ -81,3 +81,16 @@ R1(config)# logging syncronous
 R1(config)# service timestamp log datetime
 R1(config)# service sequence-numbers
 ```
+
+
+##### Logging Levels
+
+logging console 6 --
+
+LINEPROTE (up/down)
+Route Flaps
+Neighbor Adjacencies
+
+
+
+

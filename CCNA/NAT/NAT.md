@@ -121,3 +121,9 @@ R1(config)# ip nat inside source list 1 interface g0/0 overload
 3. Create ACL for Inside Local Address space
 4. Create NAT POOL for Inside Global
 5. Add NAT config tying together ACL and NAT POOL with overload
+
+
+
+
+NAT uses mask NOT wildcard mask
+

@@ -13,7 +13,7 @@ Lightweight and include only the dependencies require to run the specific App
 
 In small numbers manual operation is possible, but large-scale system (Microservices) can require thousands of containers
 
-**Microservices Architecture** - Is an approach to software architecture that divides a larger solution into smaller parts(microservices) Those microservices all run in containers that can be orchestrated by kubernetes (or another platform)
+**Microservices Architecture** - Is an approach to software architecture that divides a larger solution into smaller parts(microservices) Those microservices all run in containers that can be orchestrated by Kubernetes (or another platform)
 
 ##### VMs or Containers
 

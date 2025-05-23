@@ -16,7 +16,7 @@ NIST defines Cloud Computing in SP(Special Publication) 800-145
 Model for enabling ubiquitous, convenient, on-demand network access to a shared pool of configurable  computing resources (network, server, storage) that can be rapidly  provisioned and released with minimal management effort or service provider interaction.  This cloud model is composed of five essential characterizes, three service models, and four deployment models.  
 
 5 Essential Characteristics of Cloud Computing:
-1. On Demand Serf Service
+1. On Demand Self Service
 2. Broad Network Access
 3. Resource Pooling
 4. Rapid Elasticity

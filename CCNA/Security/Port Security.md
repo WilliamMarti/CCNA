@@ -54,6 +54,7 @@ S1(config)# errdisable recovery interval 180
 **Shutdown**  - Effectively shuts down the port by placing it in an err-disabled state
 - Generates syslog/SNMP
 - Violations counter is set to 1
+- Default port-security setting
 **Restrict** - Switch Discards traffic from unauthorized MACs.
 - Interface is NOT disabled
 - Generates syslog/SNMP message for each unauthorized MAC

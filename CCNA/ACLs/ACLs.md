@@ -170,11 +170,20 @@ Closest to the source as possible
 
 ##### ACL Numbers
 
-| Number     | Type              |
-| ---------- | ----------------- |
-| 1-99       | Standard Numbered |
-| 100-199    | Extended Numbered |
-| 1300-19999 | Standard Numbered |
-| 2000-2699  | Extended Numbered |
+| Number    | Type              |
+| --------- | ----------------- |
+|  1-99     | Standard Numbered |
+| 100-199   | Extended Numbered |
+| 1300-1999 | Standard Numbered |
+| 2000-2699 | Extended Numbered |
+
+
+| Config           | ACL Name            |
+| ---------------- | ------------------- |
+| IPv4 Console     | access-class        |
+| IPv6 ACL Console | ipv6 access-class   |
+| IPv4 Interface   | ip access-group     |
+| IPv6 Interface   | ipv6 traffic-filter |
+
 
 

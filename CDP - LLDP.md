@@ -40,6 +40,8 @@ R1# show cdp interfaces
 
 CDP is on by default
 
+###### CDP Config
+
 ```
 ! enable globally
 R1(config)# cdp run
@@ -87,3 +89,10 @@ R1(config)# lldp holdtime <seconds>
 ! set lldp reinitialization time
 R1(config)# lldp reinit <seconds>
 ```
+
+
+##### Enable / Disable
+
+**CDP**
+run = global
+enable = interface

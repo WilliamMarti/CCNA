@@ -95,3 +95,5 @@ R1(config)# ntp peer 10.0.23.1 key <key-number>
 Router becomes an authoritative name server
 
 Listen on all interfaces
+
+

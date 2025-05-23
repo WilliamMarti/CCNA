@@ -10,10 +10,18 @@
 
 ###### Fiber Standards
 
-
 | Informal Name | IEEE Standard | Speed   | Cable Type                  | Max Length             |
 | ------------- | ------------- | ------- | --------------------------- | ---------------------- |
 | 1000Base-LX   | 802.3z        | 1 Gbps  | Multimode / <br>Single-Mode | 500 m(MM)<br>5 km (SM) |
 | 10GBASE-SR    | 802.3ae       | 10 Gbps | Multimode                   | 400 m                  |
 | 10GBASE-LR    | 802.3ae       | 10 Gbps | Single-Mode                 | 10 km                  |
 | 10GBASE-ER    | 802.3ae       | 10 Gbps | Single-Mode                 | 30 km                  |
+
+###### Serial Connections
+
+| Connection | Speed       |
+| ---------- | ----------- |
+| T1 (US)    | 1.544 Mbps  |
+| E1 (EU)    | 2.048 Mbps  |
+| E3 (EU)    | 34.368 Mbps |
+| T3 (US)    | 44.736 Mbps |

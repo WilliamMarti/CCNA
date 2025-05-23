@@ -22,7 +22,7 @@ WLC1# config network secureweb enable
 
 ##### Management Interface
 
-Default interface for in-band management of the controller and connectivty to Enterprise Service such as AAA servers.  
+Default interface for in-band management of the controller and connectivity to Enterprise Service such as AAA servers.  
 
 Used for communication between the controller and access points
 
@@ -71,5 +71,29 @@ LAG requires the EtherChannel to be configured for 'mode on' on both the control
 Only 1 LAG group supported
 
 
+##### Layer 2 Security 
+
+PSK - Can accept ASCII or HEX values from 8 to 63 characters long
+CCKM - Cisco Centralized Key Management
+802.1X - Used with RADIUS/EAP
 
 
+
+
+
+**Layer 2 Security:**
+
+**None** - Disable Layer 2 security and allow open authentication to the WLAN
+WPA+WPA2 - Enable Layer 2 security by using WPA or WPA2
+8021.1X - Enable Layer 2 security by using EAP authentication combined with dynamic  WEP key
+Static WEP - Enable Layer 2 security using a staic WEP key
+Static WEP + 802.1X - Layer 2 security by using either a static WEP key or EAP authentication
+CKIP - which enable layer 2 security by using the Cisco Key Integrity Protocol (CKIP)
+
+**Layer 3 Security:**
+
+None - Disable Layer 3 security no matter which Layer 2 security option is configured and regardless of whether you are configuring a WLAN or Guest LAN
+IPSec - Enable Layer 3 security for WLANS by using IPSec
+VPN Pass-Through - Layer 3 security for WALNs by allowing a client to establish a connection with a specific virtual private network server
+Web Authentication - Layer 3 security for GUEST LANs by prompting for a user name and password when a client connects to the network
+Web Passthrough - Direct access to the network for GEUST LANs without prompting for a user name and password

@@ -159,7 +159,8 @@ Originally defined as the 2000::/3 block
 1. Private addresses, cannot be used over the Internet
 2. Don't need to be globally unique (should be)
 3. Uses block FC00::/7
-4. Later update required 8th bit set to 1, so first 2x digits must be **FD**
+4. First 7 bits 1111110
+5. Later update required 8th bit set to 1, so first 2x digits must be **FD**
 
 FD45:93AC:8A8F:0001:0000:0000:0001/64
 
@@ -211,9 +212,9 @@ Link Local (FF02) which stay in the local subnet
 
 **Link-Local (FF02)** - Packet remain in the local subnet.  Routers will not route the packet between subnets
 
-**Site-Local (FF05)** - Packet can be forwared by routers.  Should be limited to a single physical location (not forwarded over WAN)
+**Site-Local (FF05)** - Packet can be forwarded by routers.  Should be limited to a single physical location (not forwarded over WAN)
 
-**Organization-Local (FF08)** - Winder in scope than Site-Local.  Can be entire Company/Organization.
+**Organization-Local (FF08)** - Wider in scope than Site-Local.  Can be entire Company/Organization.
 
 **Global (FF0E)** - No boundaries.  Possible to be routed over the Internet
 
@@ -473,6 +474,18 @@ Not globally routable, but routable within an organization
 
 **Node-Local Multicast Addresses**
 FF01::/16
+
+
+```
+! Stateless Auto-Config, SLAAC
+R1(config-if)# ipv6 address autoconfig
+!
+R1(config-if)# ipv6 address dhcp
+```
+
+
+
+
 
 
 

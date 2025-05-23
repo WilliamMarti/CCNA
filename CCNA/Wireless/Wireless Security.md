@@ -26,7 +26,7 @@ Original 802.11 standard included 2 options for Auth
 
 - All accepted
 - Not secure
-- After client is authed and associated with AP it is possible to require the user to authenticate via other methods before access to the network is granted (Starbucks Wifi)
+- After client is authed and associated with AP it is possible to require the user to authenticate via other methods before access to the network is granted (Starbucks Wi-Fi)
 
 ##### WEP (Wired Equivalent Privacy)
 
